@@ -9,7 +9,7 @@ screen = s()
 def draw_shape(gon_num):
     color = (r.randint(1, 255), r.randint(1, 255), r.randint(1, 255))
     screen.colormode(255)
-    tim.pencolor(color)
+    tim.color(color)
     angle = 360 / gon_num
     for i in range(gon_num):
         tim.forward(100)
