@@ -9,10 +9,15 @@ screen.tracer(0)
 
 little_snake = Snake()
 
+screen.listen()
+screen.onkey(little_snake.up, "Up")
+screen.onkey(little_snake.down, "Down")
+screen.onkey(little_snake.left, "Left")
+screen.onkey(little_snake.right, "Right")
+
 game_is_on = True
 while game_is_on:
     screen.update()
     little_snake.move(20)
-    little_snake.turn(90)
 
 screen.exitonclick()
