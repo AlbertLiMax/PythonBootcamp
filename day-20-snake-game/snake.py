@@ -1,16 +1,19 @@
 from turtle import Turtle
 import time
 
-class Snake():
+
+class Snake:
     def __init__(self):
         self.snake = []
+        self.create_snake()
+
+    def create_snake(self):
         for i in range(3):
             snake_body = Turtle("square")
             self.snake.append(snake_body)
             self.snake[i].color("white")
             self.snake[i].penup()
             self.snake[i].setpos(x=0 - i * 20, y=0)
-
 
     def move(self, distance):
         time.sleep(0.1)
