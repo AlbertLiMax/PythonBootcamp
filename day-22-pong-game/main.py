@@ -11,8 +11,7 @@ screen.setup(width=800, height=600)
 screen.title("Pong")
 screen.tracer(0)
 
-table = Table()
-table.draw_middle_line(600)
+table = Table(600)
 
 paddle_r = Paddle((350, 0))
 paddle_l = Paddle((-350, 0))

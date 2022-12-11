@@ -5,7 +5,7 @@ LINE_STEP = 15
 
 
 class Table(Turtle):
-    def __init__(self):
+    def __init__(self, length):
         super().__init__()
         # Draw middle line
         self.hideturtle()
@@ -13,6 +13,7 @@ class Table(Turtle):
         self.pencolor("white")
         self.pensize(5)
         self.setheading(270)
+        self.draw_middle_line(length)
 
     def draw_middle_line(self, length):
         self.penup()
