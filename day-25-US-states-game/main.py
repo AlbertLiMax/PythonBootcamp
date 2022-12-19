@@ -18,29 +18,23 @@ state_name.penup()
 # turtle.mainloop()
 
 data = pandas.read_csv("50_states.csv")
+all_state = data.state.to_list()
 
 guessed_states = []
 
 game_is_on = True
 while game_is_on:
-    if len(guessed_states):
-        answer_state = screen.textinput(title=f"{len(guessed_states)}/50 States Correct",
-                                        prompt="What's another state's name?").title()
-    else:
-        answer_state = screen.textinput(title="Guess the State",
-                                        prompt="What's another state's name?").title()
+    answer_state = screen.textinput(title=f"{len(guessed_states)}/50 States Correct",
+                                    prompt="What's another state's name?").title()
 
     if answer_state == "Exit":
         game_is_on = False
-        remain_state = []
-        for state in data.state:
-            if state not in guessed_states:
-                remain_state.append(state)
+        remain_state = [state for state in all_state if state not in guessed_states]
         df = pandas.DataFrame(remain_state)
         df.to_csv("state_to_learn.csv", index=False)
         break
 
-    if answer_state not in guessed_states and len(data[data.state == answer_state]):
+    if answer_state not in guessed_states and answer_state in all_state:
         guessed_states.append(answer_state)
         x = int(data[data.state == answer_state].x)
         y = int(data[data.state == answer_state].y)
