@@ -11,7 +11,7 @@ if day_of_week == 0:
         quote = choice(quote_list)
 
     my_email = "alissa.cpr@gmail.com"
-    password = "uwwegpxzzgsbpzbg"
+    password = "placeholder"
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
