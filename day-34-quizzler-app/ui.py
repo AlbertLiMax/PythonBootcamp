@@ -56,6 +56,7 @@ class QuizInterface:
     def select_true(self):
         is_correct = self.quiz.check_answer("True")
         self.update_score(is_correct)
+
     def select_false(self):
         is_correct = self.quiz.check_answer("False")
         self.update_score(is_correct)
